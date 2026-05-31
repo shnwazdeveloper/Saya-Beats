@@ -30,6 +30,9 @@ jobs:
           distribution: microsoft
           cache: gradle
 
+      - name: Allow Gradle wrapper to run
+        run: chmod +x ./gradlew
+
       - name: Build release APK
         run: ./gradlew androidApp:assembleRelease --no-configuration-cache -PisFullBuild=false
 
